@@ -1,0 +1,29 @@
+[
+  {
+    "model": "rainforest.product",
+    "pk": 1,
+    "fields": {
+      "name": "Elixir",
+      "description": "Restores 99 HP to all allies.",
+      "price_in_cents": 900
+    }
+  },
+  {
+    "model": "rainforest.product",
+    "pk": 2,
+    "fields": {
+      "name": "Summon Ticket",
+      "description": "This ticket can be used only for the specified summoning event. It will let you start a summoning session without using Orbs.",
+      "price_in_cents": 2000
+    }
+  },
+  {
+    "model": "rainforest.product",
+    "pk": 3,
+    "fields": {
+      "name": "Orb",
+      "description": "Used for summoning a hero.",
+      "price_in_cents": 2599
+    }
+  }
+]
