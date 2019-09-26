@@ -1,0 +1,8 @@
+<h2>List of Products</h2>
+
+{% for item in products %}
+  <p>
+    {{item.name}} - {{item.price_in_cents}}<br />
+    {{item.description}}
+  </p>
+{% endfor %}
