@@ -8,6 +8,10 @@
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/main.css'%}" />
 </head>
 
 <body>
@@ -17,7 +21,7 @@
 
       <nav class="main-nav">
         <ul>
-          <li><a href="{% url 'products' %}">Home</a></li>
+          <li class="nav-link"><a href="{% url 'products' %}">Home</a></li>
         </ul>
       </nav>
     </header>

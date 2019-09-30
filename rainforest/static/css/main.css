@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  /* background: #f7fdff; */
+}
+
+header {
+  margin: 0;
+  padding: 0 2rem;
+  border: 1px solid lightgray;
+  border-left: none;
+  border-right: none;
+  background: #f0f1f3;
+}
+
+header h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: gray;
+  padding: 2rem 0;
+}
+
+footer {
+  padding: 2rem 0;
+  background: #333;
+}
+
+footer p {
+  text-align: center;
+  color: lightgray;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: gray;
+}
+
+a:hover, a:active, a:focus {
+  color: darkgray;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: #add2ff;
+  font-family: 'Roboto', sans-serif;
+  color: gray;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, 
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  background: paleturquoise;
+  color: #eee;
+}
+
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+.nav-link {
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.content {
+  margin: 2rem;
+}
+
+.card {
+  display: block;
+  margin: 0 auto;
+}
+
+.card-item {
+  max-width: 360px;
+  border: 1px solid lightgray;
+  padding: 1rem;
+  margin: 2rem auto;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.item-name, .item-price {
+  font-size: 1.8rem;
+  /* font-weight: 700; */
+  /* border-bottom: 1px solid gainsboro; */
+  padding: 2rem 0;
+  text-transform: capitalize;
+}
+
+.item-price {
+  justify-self: end
+}
