@@ -1,5 +1,12 @@
-<h2>{{product.name}}</h2>
-<p>
-  {{product.price_in_cents}}<br />
-  {{product.description}}
-</p>
+{% extends 'base.html' %}
+
+{% block content %}
+  <section class="content">
+    <section class="product-header">
+      <h2>{{product.name}}</h2>
+      <h2>{{product.price_in_cents}}</h2>
+    </section>
+
+    <p>{{product.description}}</p>
+  </section>
+{% endblock %}

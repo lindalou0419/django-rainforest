@@ -1,8 +1,18 @@
-<h2>List of Products</h2>
+{% extends 'base.html' %}
 
-{% for item in products %}
-  <p>
-    <a href="{% url 'product_show' product_id=item.id %}">{{item.name}} - {{item.price_in_cents}}</a><br />
-    {{item.description}}
-  </p>
-{% endfor %}
+{% block content %}
+  <section class="content">
+    <h2>List of Products</h2>
+
+    <ul class="card">
+      {% for item in products %}
+        <a href="{% url 'product_show' product_id=item.id %}">
+          <li class="card-item">
+            <p>{{item.name}}</p>
+            <p>{{item.price_in_cents}}</p>
+         </li>
+        </a>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}
