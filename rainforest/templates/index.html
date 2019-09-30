@@ -2,7 +2,7 @@
 
 {% for item in products %}
   <p>
-    {{item.name}} - {{item.price_in_cents}}<br />
+    <a href="{% url 'product_show' product_id=item.id %}">{{item.name}} - {{item.price_in_cents}}</a><br />
     {{item.description}}
   </p>
 {% endfor %}
