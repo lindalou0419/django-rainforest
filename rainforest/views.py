@@ -39,10 +39,11 @@ def product_new(request):
 
 
 def product_create(request):
-  new_product = ProductForm(request.POST)
-  if new_product.is_valid:
-    new_product.save()
+  form = ProductForm(request.POST)
+  if form.is_valid():
+    form.save()
     return redirect('products')
   else:
-    print(form)
+    context = {'form': form}
+    return render(request, 'products/new-product.html', context)
 #-------------------------------

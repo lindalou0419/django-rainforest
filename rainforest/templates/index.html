@@ -7,7 +7,7 @@
         <a href="{% url 'product_show' product_id=item.id %}">
           <li class="card-item">
             <p class="item-name">{{item.name}}</p>
-            <p class="item-price">{{item.price_in_cents}}</p>
+            <p class="item-price">{{item.price}}</p>
          </li>
         </a>
       {% endfor %}
