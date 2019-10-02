@@ -36,3 +36,13 @@ def product_new(request):
   response = render(request, 'products/new-product.html', context)
   return HttpResponse(response)
 #-------------------------------
+
+
+def product_create(request):
+  new_product = ProductForm(request.POST)
+  if new_product.is_valid:
+    new_product.save()
+    return redirect('products')
+  else:
+    print(form)
+#-------------------------------
