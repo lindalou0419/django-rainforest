@@ -1,8 +1,8 @@
-# from django.http import HttpResponse, HttpResponseRedirect
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import path
 from rainforest.models import Product
+from rainforest.forms import ProductForm
 
 def root(request):
   return redirect('products')
@@ -25,6 +25,14 @@ def product_show(request, product_id):
     'product': product,
     'title': product.name,
   }
-  response = render(request, 'product.html', context)
+  response = render(request, 'products/product.html', context)
+  return HttpResponse(response)
+#-------------------------------
+
+
+def product_new(request):
+  form = ProductForm()
+  context = {'form': form}
+  response = render(request, 'products/new-product.html', context)
   return HttpResponse(response)
 #-------------------------------
