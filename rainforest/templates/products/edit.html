@@ -3,7 +3,11 @@
 {% block content %}
   <section class="content">
     <nav class="product-nav">
-      <a href="{% url 'product_show' product_id=product.id %}">Return</a>
+      <a href="{% url 'product_show' product_id=product.id %}">Return</a> |
+      <form action="{% url 'product_delete' product_id=product.id %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+      </form>
     </nav>
 
     <h2>Edit Product</h2>

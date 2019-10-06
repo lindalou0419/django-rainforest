@@ -76,3 +76,9 @@ def product_update(request, product_id):
     response = render(request, 'products/edit.html', context)
     return HttpResponse(response)
 #-------------------------------
+
+def product_delete(request, product_id):
+  product = Product.objects.get(id=product_id)
+  product.delete()
+  return redirect('products')
+#-------------------------------
