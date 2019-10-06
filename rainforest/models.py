@@ -15,3 +15,14 @@ class Product(models.Model):
   def price(self):
     dollars = self.price_in_cents / 100
     return f"${dollars:.2f}"
+#-------------------------------
+
+
+class Review(models.Model):
+  comment = models.TextField()
+  published_date = models.DateField(auto_now_add=True)
+  product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
+
+  def __str__(self):
+    return f"Comment for {self.product.name}"
+#-------------------------------
