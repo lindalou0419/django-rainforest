@@ -2,6 +2,10 @@
 
 {% block content %}
   <section class="content">
+    <nav class="product-nav">
+      <a href="{% url 'product_show' product_id=product.id %}">Return</a>
+    </nav>
+
     <h2>Edit Product</h2>
 
     <form action="{% url 'product_update' product_id=product.id %}" method="POST">
