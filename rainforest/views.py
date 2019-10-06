@@ -33,7 +33,7 @@ def product_show(request, product_id):
 def product_new(request):
   form = ProductForm()
   context = {'form': form}
-  response = render(request, 'products/new-product.html', context)
+  response = render(request, 'products/new.html', context)
   return HttpResponse(response)
 #-------------------------------
 
@@ -46,4 +46,33 @@ def product_create(request):
   else:
     context = {'form': form}
     return render(request, 'products/new-product.html', context)
+#-------------------------------
+
+
+def product_edit(request, product_id):
+  product = Product.objects.get(id=product_id)
+  form = ProductForm(instance=product)
+  context = {
+    'form': form,
+    'title': f'Edit {product.name} Information',
+    'product': product
+  }
+  response = render(request, 'products/edit.html', context)
+  return HttpResponse(response)
+#-------------------------------
+
+def product_update(request, product_id):
+  product = Product.objects.get(id=product_id)
+  form = ProductForm(request.POST, instance=product)
+  if form.is_valid():
+    form.save()
+    return redirect('product_show', product.id)
+  else:
+    context = {
+      'form': form,
+      'title': f'Edit {product.name} Information',
+      'product': product,
+    }
+    response = render(request, 'products/edit.html', context)
+    return HttpResponse(response)
 #-------------------------------

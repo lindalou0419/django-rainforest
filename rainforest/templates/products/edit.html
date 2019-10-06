@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section class="content">
+    <h2>Edit Product</h2>
+
+    <form action="{% url 'product_update' product_id=product.id %}" method="POST">
+      {% csrf_token %}
+
+      {{form.as_p}}
+
+      <p>
+        <input type="submit" value="Update Info">
+      </p> 
+    </form>
+  </section>
+{% endblock %}
