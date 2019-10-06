@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import path
-from rainforest.models import Product
+from rainforest.models import Product, Review
 from rainforest.forms import ProductForm
 
 def root(request):
@@ -21,9 +21,11 @@ def products(request):
 
 def product_show(request, product_id):
   product = Product.objects.get(id=product_id)
+  reviews = product.reviews.order_by("-published_date")
   context = {
     'product': product,
     'title': product.name,
+    'reviews': reviews,
   }
   response = render(request, 'products/product.html', context)
   return HttpResponse(response)

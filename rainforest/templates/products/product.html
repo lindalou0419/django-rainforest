@@ -12,5 +12,16 @@
     </section>
 
     <p>{{product.description}}</p>
+
+    <section class="product-review">
+      <hr/ >
+      <h2>Reviews</h2>
+
+      <ul>
+        {% for review in reviews %}
+        <li>{{review.comment}} - {{review.published_date}}</li>
+        {% endfor %}
+      </ul>
+    </section>
   </section>
 {% endblock %}
