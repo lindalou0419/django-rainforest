@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <section class="content">
+  <section class="content product-edit">
     <nav class="product-nav">
-      <a href="{% url 'product_show' product_id=product.id %}">Return</a> |
+      <a href="{% url 'product_show' product_id=product.id %}" class="btn">Return</a>
       <form action="{% url 'product_delete' product_id=product.id %}" method="POST">
         {% csrf_token %}
-        <input type="submit" value="Delete">
+        <input type="submit" value="Delete" class="btn">
       </form>
     </nav>
 
     <h2>Edit Product</h2>
 
-    <form action="{% url 'product_update' product_id=product.id %}" method="POST">
+    <form action="{% url 'product_update' product_id=product.id %}" method="POST" class="product-form">
       {% csrf_token %}
 
       {{form.as_p}}
 
       <p>
-        <input type="submit" value="Update Info">
+        <input type="submit" value="Update Info" class="btn">
       </p> 
     </form>
   </section>

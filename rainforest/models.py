@@ -4,7 +4,7 @@ from django.core.validators import MinLengthValidator, MaxLengthValidator
 class Product(models.Model):
   name = models.CharField(max_length=255, null=False)
   description = models.TextField(
-    validators=[MinLengthValidator(10), MaxLengthValidator(500)],
+    validators=[MinLengthValidator(10, message="The description is too short!"), MaxLengthValidator(500, message="The description is too long!")],
     null=False
   )
   price_in_cents = models.IntegerField(null=False)

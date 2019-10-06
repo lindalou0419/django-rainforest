@@ -3,9 +3,9 @@
 {% block content %}
   <section class="content">
     <nav class="product-nav">
-      <a href="{% url 'product_edit' product_id=product.id %}">Edit Product</a>
+      <a href="{% url 'product_edit' product_id=product.id %}" class="btn">Edit Product</a>
     </nav>
-    
+
     <section class="product-header">
       <h2>{{product.name}}</h2>
       <h2>{{product.price}}</h2>

@@ -64,11 +64,11 @@ img {
   width: 100%;
 }
 
-button {
+.btn {
   display: inline-block;
   border: none;
   padding: 1rem 2rem;
-  margin: 0;
+  margin: 2rem 0;
   text-decoration: none;
   background: #add2ff;
   font-family: 'Roboto', sans-serif;
@@ -80,20 +80,22 @@ button {
               transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
+  font-size: 1.8rem;
+  max-height: 40px;
 }
 
-button:hover,
-button:focus {
+.btn:hover,
+.btn:focus {
   background: paleturquoise;
   color: #eee;
 }
 
-button:focus {
+.btn:focus {
   outline: 1px solid #fff;
   outline-offset: -4px;
 }
 
-button:active {
+.btn:active {
   transform: scale(0.99);
 }
 
@@ -104,6 +106,15 @@ button:active {
 
 .content {
   margin: 2rem;
+}
+
+.content h2 {
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+.content form {
+  margin: 2rem 0;
 }
 
 .card {
@@ -130,5 +141,22 @@ button:active {
 }
 
 .item-price {
-  justify-self: end
+  justify-self: end;
+}
+
+.product-nav form {
+  display: inline;
+  margin: 0;
+}
+
+.product-form label {
+  display: block;
+}
+
+.product-form p {
+  margin: 2rem 0;
+}
+
+.product-form .errorlist {
+  color: red;
 }

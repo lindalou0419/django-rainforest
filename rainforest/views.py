@@ -45,7 +45,7 @@ def product_create(request):
     return redirect('products')
   else:
     context = {'form': form}
-    return render(request, 'products/new-product.html', context)
+    return render(request, 'products/new.html', context)
 #-------------------------------
 
 

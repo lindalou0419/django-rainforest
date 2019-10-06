@@ -4,13 +4,13 @@
   <section class="content">
     <h2>New Product</h2>
 
-    <form action="{% url 'product_create' %}" method="POST">
+    <form action="{% url 'product_create' %}" method="POST" class="product-form">
       {% csrf_token %}
 
       {{form.as_p}}
 
       <p>
-        <input type="submit" value="Add a New Product">
+        <input type="submit" value="Add a New Product" class="btn">
       </p> 
     </form>
   </section>
