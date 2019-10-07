@@ -17,11 +17,17 @@
       <hr/ >
       <h2>Reviews</h2>
 
-      <ul>
-        {% for review in reviews %}
-        <li>{{review.comment}} - {{review.published_date}}</li>
-        {% endfor %}
-      </ul>
+      {% if reviews %}
+        <ul>
+          {% for review in reviews %}
+            <li>{{review.comment}} - {{review.published_date}}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No reviews yet! Submit one with the form below!</p>
+      {% endif %}
+
+      {% include 'reviews/new.html' %}
     </section>
   </section>
 {% endblock %}

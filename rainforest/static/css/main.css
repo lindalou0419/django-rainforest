@@ -149,14 +149,30 @@ img {
   margin: 0;
 }
 
-.product-form label {
+.product-form label, .review-form label {
   display: block;
 }
 
-.product-form p {
+.product-form p, .review-form p {
   margin: 2rem 0;
 }
 
-.product-form .errorlist {
+.product-form .errorlist, .review-form .errorlist {
   color: red;
+}
+
+.product-review ul, .product-review p {
+  margin: 2rem 0;
+}
+
+.product-review li {
+  padding: 2rem 1rem;
+}
+
+.product-review li:nth-child(odd) {
+  background: #f5f5f9;
+}
+
+.product-review li:nth-child(even) {
+  background: #f5faff;
 }

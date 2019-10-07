@@ -1,0 +1,9 @@
+<form action="{% url 'review_create' product_id=product.id %}" method="POST" class="review-form">
+  {% csrf_token %}
+
+  {{form.as_p}}
+
+  <p>
+    <input type="submit" value="Submit Your Review" class="btn">
+  </p> 
+</form>
