@@ -22,7 +22,11 @@
           {% for review in reviews %}
             <li>
               {{review.comment}} - {{review.published_date}} <br />
-              <a href="{% url 'review_edit' product_id=product.id review_id=review.id %}">Edit</a>
+              <a href="{% url 'review_edit' product_id=product.id review_id=review.id %}" class="btn-text">Edit</a> | 
+              <form action="{% url 'review_delete' product_id=product.id review_id=review.id %}" method="POST" class="review-delbtn">
+                {% csrf_token %}
+                <input type="submit" value="Delete" class="btn-text">
+              </form>
             </li>
           {% endfor %}
         </ul>
