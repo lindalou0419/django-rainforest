@@ -2,13 +2,13 @@
 
 {% block content %}
   <section class="content review-edit">
-    {% comment %} <nav class="product-nav">
-      <a href="{% url 'product_show' product_id=product.id %}" class="btn">Return</a>
-      <form action="{% url 'product_delete' product_id=product.id %}" method="POST">
+    <nav class="product-nav">
+      <a href="{% url 'product_show' product_id=product.id %}" class="btn">Return to Product</a>
+      <form action="{% url 'review_delete' product_id=product.id review_id=review.id %}" method="POST">
         {% csrf_token %}
         <input type="submit" value="Delete" class="btn">
       </form>
-    </nav> {% endcomment %}
+    </nav>
 
     <h2>Edit Review</h2>
 

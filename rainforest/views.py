@@ -143,3 +143,9 @@ def review_update(request, product_id, review_id):
     response = render(request, 'reviews/edit.html', context)
     return HttpResponse(response)
 #-------------------------------
+
+def review_delete(request, product_id, review_id):
+  product = Product.objects.get(id=product_id)
+  review = Review.objects.get(id=review_id)
+  review.delete()
+  return redirect('product_show', product.id)
