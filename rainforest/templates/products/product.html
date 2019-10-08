@@ -20,7 +20,10 @@
       {% if reviews %}
         <ul>
           {% for review in reviews %}
-            <li>{{review.comment}} - {{review.published_date}}</li>
+            <li>
+              {{review.comment}} - {{review.published_date}} <br />
+              <a href="{% url 'review_edit' product_id=product.id review_id=review.id %}">Edit</a>
+            </li>
           {% endfor %}
         </ul>
       {% else %}
